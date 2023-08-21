@@ -71,6 +71,10 @@ const Dashoard = () => {
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
+              ":hover": {
+                backgroundColor: theme.palette.background.alt,
+                color: theme.palette.secondary.light,
+              },
             }}
           >
             <DownloadOutlined sx={{ mr: "10px" }} />
