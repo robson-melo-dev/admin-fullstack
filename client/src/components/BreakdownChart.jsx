@@ -28,12 +28,10 @@ const BreakdownChart = ({ isDashboard = false }) => {
 
   return (
     <Box
-      height={isDashboard ? "400px" : "100%"}
+      height="calc(100% - 10px)"
       width={undefined}
-      minHeight={isDashboard ? "325px" : undefined}
-      minWidth={isDashboard ? "325px" : undefined}
       position="relative"
-      color={theme.palette.secondary[200]}
+      color={theme.palette.secondary[800]}
     >
       <ResponsivePie
         data={formattedData}
@@ -80,7 +78,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
         margin={
           isDashboard
             ? { top: 40, right: 80, bottom: 100, left: 50 }
-            : { top: 40, right: 80, bottom: 80, left: 80 }
+            : { top: 80, right: -10, bottom: 80, left: 80 }
         }
         sortByValue={true}
         innerRadius={0.45}
@@ -102,10 +100,12 @@ const BreakdownChart = ({ isDashboard = false }) => {
         }}
         legends={[
           {
+            width: undefined,
+            height: "300px",
             anchor: "bottom",
             direction: "row",
             justify: false,
-            translateX: isDashboard ? 200 : 0,
+            /* translateX: isDashboard ? 200 : 0, */
             translateY: isDashboard ? 50 : 56,
             itemsSpacing: 0,
             itemWidth: 100,
@@ -119,7 +119,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
               {
                 on: "hover",
                 style: {
-                  itemTextColor: theme.palette.primary[500],
+                  itemTextColor: theme.palette.secondary[200],
                 },
               },
             ],
